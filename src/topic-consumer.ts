@@ -30,12 +30,16 @@ export class TopicConsumer {
         });
 
         client.onMessage(async (msg: KafkaClientMessage): Promise<void> => {
-            // if (msg.content) {
-            //     const document = msg.content; // as any as Document<any>;
-            //     this.loggingService.debug(() => JSON.stringify(document, null, 2));
-            // } else {
             this.loggingService.debug(() => JSON.stringify(msg, null, 2));
-            // }
+
+            // client.onMessage(async (msg: KafkaClientMessage): Promise<void> => {
+            //     if (msg?.couchbase?.event === 'mutation' && msg.content) {
+            //         const document = msg.content as any as Document<any>;
+            //         this.loggingService.info(() => `Received document ${msg.key} from topic ${topic}`);
+            //         const commandType = (msg.content as any).resource.payload.type;
+            //         // .. . .
+            //     }
+            // });
         });
 
         client.onError((err: Error): void => {

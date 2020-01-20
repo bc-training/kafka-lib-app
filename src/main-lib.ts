@@ -1,11 +1,11 @@
 import 'reflect-metadata';
-import { KafkaClient } from './kafka-client';
+import { KafkaClient } from './kafka/kafka-client';
 import { KafkaConsumer } from 'node-rdkafka';
-import { KafkaOptionKeys } from './kafka-option-keys';
-import { KafkaClientMessage } from './kafka-message';
-import { KafkaLogEvent, KafkaLogSeverity, KafkaLogUtil } from './kafka-log';
+import { KafkaOptionKeys } from './kafka/kafka-option-keys';
+import { KafkaClientMessage } from './kafka/kafka-message';
+import { KafkaLogEvent, KafkaLogSeverity, KafkaLogUtil } from './kafka/kafka-log';
 import Container from 'typedi';
-import { LoggingService } from '../core/logging-service';
+import { LoggingService } from './core/logging-service';
 
 /*
 List of confluent and Kafka commands to be used.
